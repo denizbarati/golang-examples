@@ -4,6 +4,8 @@ import "fmt"
 
 func main() {
 	Slices()
+	length()
+	NilSlice()
 }
 
 func Slices() {
@@ -23,4 +25,25 @@ func Slices() {
 	// start from index 4
 	// [5 6 7 8 9]
 	fmt.Println(p[4:])
+}
+
+func length() {
+	cities := []string{
+		"LA",
+		"San Diego",
+		"San Francisco",
+	}
+	fmt.Println(cap(cities))
+
+	// make slice and check length of that
+	countries := make([]string, 50)
+	fmt.Println(len(countries))
+}
+
+func NilSlice() { // The zero value of a slice is nil. A nil slice has a length and capacity of 0.
+	var sum []int
+	fmt.Println(sum)
+	fmt.Println(len(sum))
+	fmt.Println(cap(sum))
+	fmt.Println(sum == nil)
 }
