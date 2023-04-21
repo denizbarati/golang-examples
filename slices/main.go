@@ -6,6 +6,9 @@ func main() {
 	Slices()
 	length()
 	NilSlice()
+	MakingSlices()
+	AppendingToSlice()
+	AppendingToSlice2()
 }
 
 func Slices() {
@@ -46,4 +49,25 @@ func NilSlice() { // The zero value of a slice is nil. A nil slice has a length 
 	fmt.Println(len(sum))
 	fmt.Println(cap(sum))
 	fmt.Println(sum == nil)
+}
+
+func MakingSlices() {
+	cities := make([]string, 3)
+	cities[0] = "London"
+	cities[1] = "Paris"
+	cities[2] = "LA"
+	fmt.Println("makingSlices func: ", cities)
+}
+
+func AppendingToSlice() {
+	cities := []string{}
+	cities = append(cities, "mountain view", "river road")
+	fmt.Printf("AppendingToSlice func: %q \n", cities)
+}
+
+func AppendingToSlice2() {
+	cities := []string{"LA", "London", "Paris"}
+	otherCities := []string{"mountain view", "river road"}
+	cities = append(cities, otherCities...)
+	fmt.Printf("AppendingToSlice2 func: %q", cities)
 }
